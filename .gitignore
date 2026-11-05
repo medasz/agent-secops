@@ -21,7 +21,7 @@ node_modules/
 .env
 .env*
 .env.*
-!.env.example
+!**/scripts/.env
 
 # Build outputs
 output/

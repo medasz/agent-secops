@@ -26,7 +26,7 @@ export function createProxiedRequest() {
 
       const req = mod.request(options, (res) => {
         const chunks = [];
-        res.on('data', (chunk) => chunks.push(chunk));
+        res.on('data', (chunk) => chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk)));
         res.on('end', () => {
           const body = Buffer.concat(chunks).toString('utf8');
           resolve({ statusCode: res.statusCode, body });

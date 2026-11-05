@@ -559,7 +559,7 @@ describe('US1: tcpProbe + parseHostPort 工具函数', () => {
   it('C3 PF-THREATBOOK-TCP: ENABLE_PROXY=true → 探测 PROXY_HOST:PROXY_PORT', async () => {
     const { stdout, status } = await runCli(
       ['--date', TODAY, '--format', 'json'],
-      { env: { ...process.env, ENABLE_PROXY: 'true', PROXY_HOST: '192.0.2.34', PROXY_PORT: '443', PROXY_TLS: 'true' } }
+      { env: { ...process.env, ENABLE_THREATBOOK: 'true', ENABLE_PROXY: 'true', PROXY_HOST: '192.0.2.34', PROXY_PORT: '443', PROXY_TLS: 'true' } }
     );
     assert.equal(status, 0);
     const c3 = findItem(parseJson(stdout).items, 'PF-THREATBOOK-TCP');

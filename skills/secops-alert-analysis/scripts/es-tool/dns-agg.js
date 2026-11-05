@@ -262,6 +262,14 @@ async function main() {
       console.error(`[ERROR] ES 连接/查询失败: ${e.message}`);
       process.exit(2);
     }
+    if (!response.aggregations) {
+      if (!windowRange) {
+        console.error('[ERROR] ES 响应缺少 aggregations 字段，解析失败。');
+        process.exit(3);
+      }
+      logger.warn('响应缺少 aggregations，跳过', { index: indexName });
+      continue;
+    }
     successCount++;
     allAlertBuckets = allAlertBuckets.concat(response.aggregations?.dns_alerts_by_ioc?.buckets || []);
     allDomainBuckets = allDomainBuckets.concat(response.aggregations?.dns_domains?.dns_traffic?.by_ioc?.buckets || []);

@@ -25,12 +25,7 @@ SOC 告警研判 agent skill。输入 Elasticsearch 里 `logfmt_746_*` 索引的
 
 要求 Node 22.5 以上，ES 7.16.3（ESQL 需要 8.11 以上，本 skill 走 `_search` 聚合，不用 `_query`）。
 
-```bash
-cp skills/secops-alert-analysis/scripts/.env.example \
-   skills/secops-alert-analysis/scripts/.env
-```
-
-填 `ES_HOST`、`ES_USERNAME`、`ES_PASSWORD`。门户回写、威胁情报、出口代理三组默认关闭，需要时置 `ENABLE_*` 为 `true` 并补对应凭据。系统环境变量优先于 `.env`。
+仓库自带 `skills/secops-alert-analysis/scripts/.env`，内容为示例值，改成自己的即可。`ES_HOST`、`ES_USERNAME`、`ES_PASSWORD` 必填；门户回写与威胁情报默认关闭，需要时置对应 `ENABLE_*` 为 `true` 并补凭据。系统环境变量优先于 `.env`。
 
 ## 用法
 

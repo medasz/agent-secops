@@ -18,7 +18,7 @@ function defaultRequest(url, { timeout } = {}) {
     const mod = url.startsWith('https') ? https : http;
     const req = mod.get(url, { timeout }, (res) => {
       const chunks = [];
-      res.on('data', (chunk) => chunks.push(chunk));
+      res.on('data', (chunk) => chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk)));
       res.on('end', () => {
         const body = Buffer.concat(chunks).toString('utf8');
         resolve({ statusCode: res.statusCode, body });
