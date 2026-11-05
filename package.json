@@ -1,0 +1,13 @@
+{
+  "name": "secops-alert-analysis",
+  "version": "1.0.0",
+  "description": "SOC 告警研判 skill：外部攻击源统计、失陷主机、横向渗透、封禁清单",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "test": "node --test --test-concurrency=1 tests/secops-alert-analysis/*.test.js"
+  }
+}

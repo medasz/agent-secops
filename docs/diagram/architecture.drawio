@@ -1,0 +1,121 @@
+<mxfile host="65bd71144e">
+    <diagram name="IDS Patrol 系统架构" exported="2026-04-14" id="0">
+        <mxGraphModel dx="373" dy="693" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="900" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="title" value="IDS Patrol 系统架构图" parent="1" vertex="1">
+                    <mxGeometry x="400" y="20" width="400" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="es_icon" value="Elasticsearch&#xa;(IDS 告警数据)" parent="1" vertex="1">
+                    <mxGeometry x="80" y="120" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="es_label" value="存储 IDS 告警日志&#xa;索引: logfmt_746_YYYYMMDD" parent="1" vertex="1">
+                    <mxGeometry x="90" y="180" width="180" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="extract_script" value="extract_ids_alerts.js&#xa;(告警提取)" parent="1" vertex="1">
+                    <mxGeometry x="320" y="120" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="analyze_script" value="analyze_alerts.js&#xa;(告警分析)" parent="1" vertex="1">
+                    <mxGeometry x="320" y="240" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="es_extract_arrow" parent="1" source="es_icon" target="extract_script" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="extract_analyze_arrow" parent="1" source="extract_script" target="analyze_script" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="output_icon" target="middleware_box" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="output_icon" value="output/&#xa;(报告输出)" parent="1" vertex="1">
+                    <mxGeometry x="560" y="160" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="analyze_output_arrow" parent="1" source="analyze_script" target="output_icon" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="whitelist_icon" value="ipWhite.md&#xa;(IP 白名单)" parent="1" vertex="1">
+                    <mxGeometry x="320" y="360" width="160" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="whitelist_analyze_arrow" parent="1" source="whitelist_icon" target="analyze_script" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="api_server" value="API Server&#xa;(OpenAI 兼容)" parent="1" vertex="1">
+                    <mxGeometry x="560" y="300" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="routes_box" value="Routes" parent="1" vertex="1">
+                    <mxGeometry x="800" y="260" width="100" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="route_chat" value="• /v1/chat/completions&#xa;• /v1/models&#xa;• /v1/providers&#xa;• /health" parent="1" vertex="1">
+                    <mxGeometry x="810" y="280" width="80" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="api_routes_arrow" parent="1" source="api_server" target="routes_box" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="providers_title" value="LLM Providers" parent="1" vertex="1">
+                    <mxGeometry x="980" y="200" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="provider_openai" value="OpenAI" parent="1" vertex="1">
+                    <mxGeometry x="980" y="240" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="provider_anthropic" value="Claude&#xa;(Anthropic)" parent="1" vertex="1">
+                    <mxGeometry x="980" y="290" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="provider_ollama" value="Ollama" parent="1" vertex="1">
+                    <mxGeometry x="980" y="340" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="routes_provider_arrow1" parent="1" source="routes_box" target="provider_openai" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="routes_provider_arrow2" parent="1" source="routes_box" target="provider_anthropic" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="routes_provider_arrow3" parent="1" source="routes_box" target="provider_ollama" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="provider_manager" value="Provider Manager&#xa;(Failover)" parent="1" vertex="1">
+                    <mxGeometry x="790" y="520" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="manager_routes_arrow" parent="1" source="provider_manager" target="routes_box" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="middleware_box" value="Middleware" parent="1" vertex="1">
+                    <mxGeometry x="560" y="260" width="160" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="middleware_content" value="• Rate Limit&#xa;• Quota Manager&#xa;• Error Handler" parent="1" vertex="1">
+                    <mxGeometry x="570" y="275" width="140" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="api_middleware_arrow" parent="1" source="api_server" target="middleware_box" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="middleware_manager_arrow" style="exitX=0.75;exitY=1;exitDx=0;exitDy=0;" parent="1" source="middleware_box" target="provider_manager" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="users" value="外部用户 / 客户端" parent="1" vertex="1">
+                    <mxGeometry x="560" y="420" width="160" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="users_api_arrow" parent="1" source="users" target="api_server" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" style="edgeStyle=none;html=1;" parent="1" source="config" target="provider_manager" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="config" value="providers.json&#xa;(配置文件)" parent="1" vertex="1">
+                    <mxGeometry x="80" y="520" width="140" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="layer_data" value="数据源层" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#666666;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="40" y="90" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="layer_script" value="脚本层" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#666666;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="360" y="80" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="layer_api" value="API 服务层" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#666666;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="540" y="240" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="layer_provider" value="Provider 层" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#666666;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="920" y="80" width="80" height="20" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

@@ -1,0 +1,60 @@
+# Claude Code / Cline / OpenCode / Serena 配置文件
+#.claude/
+#.opencode/
+#.serena/
+#.cline/
+#.clinerules/
+
+# IDE 和编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Dependencies
+node_modules/
+.venv/
+.venv*
+
+# Environment 
+.env
+.env*
+.env.*
+!.env.example
+
+# Build outputs
+output/
+output.*/
+outputs/
+outputs.*/
+!**/output/
+!**/output/.gitkeep
+export/
+
+# 临时文件和缓存
+temp/
+temp-*/
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+
+# SQLite 缓存
+cache/
+*.sqlite
+
+# 测试文件
+test/
+test-*/
+
+# dev资源
+docs/dev
+AISecOpsAgent
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# IDS/流量传感器原始告警 Excel 数据（敏感，不入库）
+/ids-fastreport/

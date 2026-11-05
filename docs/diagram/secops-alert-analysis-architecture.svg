@@ -1,0 +1,1232 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 1320 700"
+   version="1.1"
+   id="svg92"
+   sodipodi:docname="secops-alert-analysis-architecture.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview92"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.8414286"
+     inkscape:cx="664.70132"
+     inkscape:cy="263.11094"
+     inkscape:window-width="2560"
+     inkscape:window-height="1566"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg92" />
+  <defs
+     id="defs3">
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#grid"
+       id="pattern92"
+       patternTransform="matrix(1,0,0,1.1871429,0,-1.3682e-6)" />
+    <style
+       id="style1">
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Noto+Sans+SC:wght@400;500;600&amp;display=swap');
+      text { font-family: 'JetBrains Mono', 'Noto Sans SC', 'PingFang SC', 'SF Mono', 'Cascadia Code', monospace; }
+    </style>
+    <pattern
+       id="grid"
+       width="40"
+       height="40"
+       patternUnits="userSpaceOnUse">
+      <path
+         d="M 40 0 L 0 0 0 40"
+         fill="none"
+         stroke="#e2e8f0"
+         stroke-width="0.5"
+         id="path1" />
+    </pattern>
+    <marker
+       id="arrow"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#334155"
+         id="polygon1" />
+    </marker>
+    <marker
+       id="arrow-gray"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#94a3b8"
+         id="polygon2" />
+    </marker>
+    <marker
+       id="arrow-dash"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#94a3b8"
+         id="polygon3" />
+    </marker>
+  </defs>
+  <!-- Background -->
+  <rect
+     width="100%"
+     height="118.71431%"
+     fill="#ffffff"
+     id="rect3"
+     x="0"
+     y="0"
+     style="stroke-width:1.08956" />
+  <rect
+     width="100%"
+     height="118.71429%"
+     fill="url(#grid)"
+     id="rect4"
+     x="0"
+     y="7.8159701e-14"
+     style="fill:url(#pattern92);stroke-width:1.08956" />
+  <!-- Title -->
+  <text
+     x="30"
+     y="34"
+     fill="#0f172a"
+     font-size="16"
+     font-weight="700"
+     id="text4">IDS Alert Analysis Architecture</text>
+  <text
+     x="30"
+     y="50"
+     fill="#64748b"
+     font-size="9"
+     id="text5">MCP-first data extraction with script fallback | Claude Code Skill</text>
+  <!-- ================================================================ -->
+  <!-- Layer Labels -->
+  <!-- ================================================================ -->
+  <text
+     x="95"
+     y="78"
+     fill="#64748b"
+     font-size="9"
+     font-weight="600"
+     text-anchor="middle"
+     id="text6">DATA SOURCES</text>
+  <text
+     x="310"
+     y="78"
+     fill="#64748b"
+     font-size="9"
+     font-weight="600"
+     text-anchor="middle"
+     id="text7">QUERY LAYER</text>
+  <text
+     x="560"
+     y="78"
+     fill="#64748b"
+     font-size="9"
+     font-weight="600"
+     text-anchor="middle"
+     id="text8">ANALYSIS ENGINE</text>
+  <text
+     x="955"
+     y="78"
+     fill="#64748b"
+     font-size="9"
+     font-weight="600"
+     text-anchor="middle"
+     id="text9">OUTPUT</text>
+  <!-- Separator lines -->
+  <line
+     x1="200"
+     y1="68"
+     x2="200"
+     y2="640"
+     stroke="#e2e8f0"
+     stroke-width="1"
+     stroke-dasharray="4,8"
+     id="line9" />
+  <line
+     x1="420"
+     y1="68"
+     x2="420"
+     y2="640"
+     stroke="#e2e8f0"
+     stroke-width="1"
+     stroke-dasharray="4,8"
+     id="line10" />
+  <line
+     x1="700"
+     y1="68"
+     x2="700"
+     y2="640"
+     stroke="#e2e8f0"
+     stroke-width="1"
+     stroke-dasharray="4,8"
+     id="line11" />
+  <!-- ================================================================ -->
+  <!-- LAYER 1: Data Sources -->
+  <!-- ================================================================ -->
+  <!-- ES Cluster -->
+  <rect
+     x="20"
+     y="90"
+     width="170"
+     height="70"
+     rx="6"
+     fill="none"
+     stroke="#1e293b"
+     stroke-width="1.5"
+     id="rect11" />
+  <text
+     x="105"
+     y="114"
+     fill="#0f172a"
+     font-size="11"
+     font-weight="600"
+     text-anchor="middle"
+     id="text11">Elasticsearch</text>
+  <text
+     x="105"
+     y="130"
+     fill="#64748b"
+     font-size="8"
+     text-anchor="middle"
+     id="text12">logfmt_746_YYYYMMDD</text>
+  <text
+     x="105"
+     y="144"
+     fill="#64748b"
+     font-size="8"
+     text-anchor="middle"
+     id="text13">field_values.* namespace</text>
+  <!-- IP Whitelist -->
+  <rect
+     x="20"
+     y="185"
+     width="170"
+     height="60"
+     rx="6"
+     fill="none"
+     stroke="#1e293b"
+     stroke-width="1.5"
+     id="rect13" />
+  <text
+     x="105"
+     y="209"
+     fill="#0f172a"
+     font-size="11"
+     font-weight="600"
+     text-anchor="middle"
+     id="text14">IP Whitelist</text>
+  <text
+     x="105"
+     y="225"
+     fill="#64748b"
+     font-size="8"
+     text-anchor="middle"
+     id="text15">CIDR / range / single IP</text>
+  <text
+     x="105"
+     y="237"
+     fill="#64748b"
+     font-size="8"
+     text-anchor="middle"
+     id="text16">references/ipWhite.md</text>
+  <!-- Threat Intel -->
+  <rect
+     x="20"
+     y="270"
+     width="170"
+     height="60"
+     rx="6"
+     fill="none"
+     stroke="#1e293b"
+     stroke-width="1.5"
+     id="rect16" />
+  <text
+     x="105"
+     y="294"
+     fill="#0f172a"
+     font-size="11"
+     font-weight="600"
+     text-anchor="middle"
+     id="text17">Threat Intel</text>
+  <text
+     x="105"
+     y="310"
+     fill="#64748b"
+     font-size="8"
+     text-anchor="middle"
+     id="text18">VirusTotal + MicroTrace</text>
+  <text
+     x="105"
+     y="322"
+     fill="#64748b"
+     font-size="8"
+     text-anchor="middle"
+     id="text19">IP reputation / geolocation</text>
+  <!-- Report Templates -->
+  <rect
+     x="20"
+     y="355"
+     width="170"
+     height="60"
+     rx="6"
+     fill="none"
+     stroke="#1e293b"
+     stroke-width="1.5"
+     id="rect19" />
+  <text
+     x="105"
+     y="379"
+     fill="#0f172a"
+     font-size="11"
+     font-weight="600"
+     text-anchor="middle"
+     id="text20">Report Templates</text>
+  <text
+     x="105"
+     y="395"
+     fill="#64748b"
+     font-size="8"
+     text-anchor="middle"
+     id="text21">templates/*.md</text>
+  <text
+     x="105"
+     y="407"
+     fill="#64748b"
+     font-size="8"
+     text-anchor="middle"
+     id="text22">templates/*.html</text>
+  <!-- ================================================================ -->
+  <!-- LAYER 2: Query Layer -->
+  <!-- ================================================================ -->
+  <rect
+     x="220"
+     y="90"
+     width="180"
+     height="325"
+     rx="10"
+     fill="none"
+     stroke="#94a3b8"
+     stroke-width="1"
+     stroke-dasharray="8,4"
+     id="rect22" />
+  <text
+     x="232"
+     y="106"
+     fill="#64748b"
+     font-size="8"
+     font-weight="500"
+     id="text23">MCP-First · Script Fallback</text>
+  <!-- MCP ES Tools -->
+  <rect
+     x="232"
+     y="118"
+     width="156"
+     height="60"
+     rx="6"
+     fill="none"
+     stroke="#1e293b"
+     stroke-width="1.5"
+     id="rect23" />
+  <text
+     x="310"
+     y="140"
+     fill="#0f172a"
+     font-size="11"
+     font-weight="600"
+     text-anchor="middle"
+     id="text24">ES MCP Tools</text>
+  <text
+     x="310"
+     y="156"
+     fill="#64748b"
+     font-size="8"
+     text-anchor="middle"
+     id="text25">esql / search / mappings</text>
+  <!-- Fallback label -->
+  <text
+     x="310"
+     y="196"
+     fill="#94a3b8"
+     font-size="8"
+     text-anchor="middle"
+     id="text26">MCP fails</text>
+  <path
+     d="M 310 200 L 310 212"
+     fill="none"
+     stroke="#94a3b8"
+     stroke-width="1"
+     stroke-dasharray="3,3"
+     marker-end="url(#arrow-dash)"
+     id="path26" />
+  <!-- Script Fallback -->
+  <rect
+     x="232"
+     y="216"
+     width="156"
+     height="50"
+     rx="6"
+     fill="none"
+     stroke="#94a3b8"
+     stroke-width="1"
+     stroke-dasharray="4,4"
+     id="rect26" />
+  <text
+     x="310"
+     y="238"
+     fill="#64748b"
+     font-size="10"
+     font-weight="500"
+     text-anchor="middle"
+     id="text27">Script Pipeline</text>
+  <text
+     x="310"
+     y="252"
+     fill="#94a3b8"
+     font-size="8"
+     text-anchor="middle"
+     id="text28">extract_es_ids.js</text>
+  <!-- Whitelist Filter -->
+  <rect
+     x="232"
+     y="286"
+     width="156"
+     height="50"
+     rx="6"
+     fill="none"
+     stroke="#1e293b"
+     stroke-width="1.5"
+     id="rect28" />
+  <text
+     x="310"
+     y="308"
+     fill="#0f172a"
+     font-size="11"
+     font-weight="600"
+     text-anchor="middle"
+     id="text29">Whitelist Filter</text>
+  <text
+     x="310"
+     y="324"
+     fill="#64748b"
+     font-size="8"
+     text-anchor="middle"
+     id="text30">whitelist_filter.js</text>
+  <!-- Threat Lookup -->
+  <rect
+     x="232"
+     y="356"
+     width="156"
+     height="50"
+     rx="6"
+     fill="none"
+     stroke="#1e293b"
+     stroke-width="1.5"
+     id="rect30" />
+  <text
+     x="310"
+     y="378"
+     fill="#0f172a"
+     font-size="11"
+     font-weight="600"
+     text-anchor="middle"
+     id="text31">Threat Lookup</text>
+  <text
+     x="310"
+     y="394"
+     fill="#64748b"
+     font-size="8"
+     text-anchor="middle"
+     id="text32">ip_enrichment.js</text>
+  <!-- ================================================================ -->
+  <!-- LAYER 3: Analysis Engine -->
+  <!-- ================================================================ -->
+  <rect
+     x="440"
+     y="90"
+     width="240"
+     height="325"
+     rx="10"
+     fill="none"
+     stroke="#94a3b8"
+     stroke-width="1"
+     stroke-dasharray="8,4"
+     id="rect32" />
+  <text
+     x="452"
+     y="106"
+     fill="#64748b"
+     font-size="8"
+     font-weight="500"
+     id="text33">Analysis Engine</text>
+  <!-- Alert Aggregation -->
+  <rect
+     x="452"
+     y="118"
+     width="216"
+     height="60"
+     rx="6"
+     fill="none"
+     stroke="#1e293b"
+     stroke-width="1.5"
+     id="rect33" />
+  <text
+     x="560"
+     y="140"
+     fill="#0f172a"
+     font-size="11"
+     font-weight="600"
+     text-anchor="middle"
+     id="text34">Alert Aggregation</text>
+  <text
+     x="560"
+     y="156"
+     fill="#64748b"
+     font-size="8"
+     text-anchor="middle"
+     id="text35">calculate_total.js</text>
+  <text
+     x="560"
+     y="168"
+     fill="#64748b"
+     font-size="8"
+     text-anchor="middle"
+     id="text36">attack type / severity stats</text>
+  <!-- Time Distribution -->
+  <rect
+     x="452"
+     y="200"
+     width="216"
+     height="50"
+     rx="6"
+     fill="none"
+     stroke="#1e293b"
+     stroke-width="1.5"
+     id="rect36" />
+  <text
+     x="560"
+     y="222"
+     fill="#0f172a"
+     font-size="11"
+     font-weight="600"
+     text-anchor="middle"
+     id="text37">Time Distribution</text>
+  <text
+     x="560"
+     y="238"
+     fill="#64748b"
+     font-size="8"
+     text-anchor="middle"
+     id="text38">time_distribution.js</text>
+  <!-- IP Enrichment Results -->
+  <rect
+     x="452"
+     y="272"
+     width="216"
+     height="50"
+     rx="6"
+     fill="none"
+     stroke="#1e293b"
+     stroke-width="1.5"
+     id="rect38" />
+  <text
+     x="560"
+     y="294"
+     fill="#0f172a"
+     font-size="11"
+     font-weight="600"
+     text-anchor="middle"
+     id="text39">IP Enrichment Results</text>
+  <text
+     x="560"
+     y="310"
+     fill="#64748b"
+     font-size="8"
+     text-anchor="middle"
+     id="text40">geo / reputation / owner</text>
+  <!-- Log Parser -->
+  <rect
+     x="452"
+     y="344"
+     width="216"
+     height="50"
+     rx="6"
+     fill="none"
+     stroke="#94a3b8"
+     stroke-width="1"
+     id="rect40" />
+  <text
+     x="560"
+     y="366"
+     fill="#64748b"
+     font-size="10"
+     font-weight="500"
+     text-anchor="middle"
+     id="text41">Log Parser</text>
+  <text
+     x="560"
+     y="382"
+     fill="#94a3b8"
+     font-size="8"
+     text-anchor="middle"
+     id="text42">parse_mcp_output.js</text>
+  <!-- ================================================================ -->
+  <!-- LAYER 4: Output -->
+  <!-- ================================================================ -->
+  <!-- Flow A: Full Analysis -->
+  <rect
+     x="720"
+     y="90"
+     width="270"
+     height="220"
+     rx="10"
+     fill="none"
+     stroke="#94a3b8"
+     stroke-width="1"
+     stroke-dasharray="8,4"
+     id="rect42" />
+  <text
+     x="732"
+     y="106"
+     fill="#334155"
+     font-size="9"
+     font-weight="600"
+     id="text43">Flow A: Full Alert Analysis</text>
+  <rect
+     x="732"
+     y="118"
+     width="246"
+     height="55"
+     rx="6"
+     fill="none"
+     stroke="#1e293b"
+     stroke-width="1.5"
+     id="rect43" />
+  <text
+     x="855"
+     y="140"
+     fill="#0f172a"
+     font-size="11"
+     font-weight="600"
+     text-anchor="middle"
+     id="text44">alert-report-{date}.md</text>
+  <text
+     x="855"
+     y="156"
+     fill="#64748b"
+     font-size="8"
+     text-anchor="middle"
+     id="text45">complete threat analysis report</text>
+  <rect
+     x="732"
+     y="190"
+     width="246"
+     height="55"
+     rx="6"
+     fill="none"
+     stroke="#1e293b"
+     stroke-width="1.5"
+     id="rect45" />
+  <text
+     x="855"
+     y="212"
+     fill="#0f172a"
+     font-size="11"
+     font-weight="600"
+     text-anchor="middle"
+     id="text46">alert-report-{date}.html</text>
+  <text
+     x="855"
+     y="228"
+     fill="#64748b"
+     font-size="8"
+     text-anchor="middle"
+     id="text47">dark mode + print friendly</text>
+  <rect
+     x="732"
+     y="262"
+     width="246"
+     height="38"
+     rx="6"
+     fill="none"
+     stroke="#94a3b8"
+     stroke-width="1"
+     id="rect47" />
+  <text
+     x="855"
+     y="285"
+     fill="#64748b"
+     font-size="9"
+     text-anchor="middle"
+     id="text48">Terminal Summary (key metrics)</text>
+  <!-- Flow B: IP Trace -->
+  <rect
+     x="1020"
+     y="90"
+     width="270"
+     height="220"
+     rx="10"
+     fill="none"
+     stroke="#94a3b8"
+     stroke-width="1"
+     stroke-dasharray="8,4"
+     id="rect48" />
+  <text
+     x="1032"
+     y="106"
+     fill="#334155"
+     font-size="9"
+     font-weight="600"
+     id="text49">Flow B: Single IP Trace</text>
+  <rect
+     x="1032"
+     y="118"
+     width="246"
+     height="55"
+     rx="6"
+     fill="none"
+     stroke="#1e293b"
+     stroke-width="1.5"
+     id="rect49" />
+  <text
+     x="1155"
+     y="140"
+     fill="#0f172a"
+     font-size="11"
+     font-weight="600"
+     text-anchor="middle"
+     id="text50">trace-report-{date}.md</text>
+  <text
+     x="1155"
+     y="156"
+     fill="#64748b"
+     font-size="8"
+     text-anchor="middle"
+     id="text51">attack path / geo / ownership</text>
+  <rect
+     x="1032"
+     y="190"
+     width="246"
+     height="55"
+     rx="6"
+     fill="none"
+     stroke="#1e293b"
+     stroke-width="1.5"
+     id="rect51" />
+  <text
+     x="1155"
+     y="212"
+     fill="#0f172a"
+     font-size="11"
+     font-weight="600"
+     text-anchor="middle"
+     id="text52">trace-report-{date}.html</text>
+  <text
+     x="1155"
+     y="228"
+     fill="#64748b"
+     font-size="8"
+     text-anchor="middle"
+     id="text53">visual attack path diagram</text>
+  <rect
+     x="1032"
+     y="262"
+     width="246"
+     height="38"
+     rx="6"
+     fill="none"
+     stroke="#94a3b8"
+     stroke-width="1"
+     id="rect53" />
+  <text
+     x="1155"
+     y="285"
+     fill="#64748b"
+     font-size="9"
+     text-anchor="middle"
+     id="text54">Block Recommendation (IP)</text>
+  <!-- ================================================================ -->
+  <!-- Report Content Breakdown -->
+  <!-- ================================================================ -->
+  <rect
+     x="720"
+     y="521"
+     width="570"
+     height="160"
+     rx="10"
+     fill="none"
+     stroke="#cbd5e1"
+     stroke-width="1"
+     id="rect54" />
+  <text
+     x="735"
+     y="541"
+     fill="#334155"
+     font-size="9px"
+     font-weight="600"
+     id="text55">Report Content</text>
+  <!-- Left column -->
+  <text
+     x="740"
+     y="564"
+     fill="#0f172a"
+     font-size="8px"
+     font-weight="600"
+     id="text56">THREAT ANALYSIS</text>
+  <text
+     x="740"
+     y="581"
+     fill="#475569"
+     font-size="8px"
+     id="text57">- External attack IP list (filtered by whitelist)</text>
+  <text
+     x="740"
+     y="596"
+     fill="#475569"
+     font-size="8px"
+     id="text58">- Attack type distribution (SQL injection / XSS / RCE ...)</text>
+  <text
+     x="740"
+     y="611"
+     fill="#475569"
+     font-size="8px"
+     id="text59">- Severity level breakdown (攻击成功 / 失陷)</text>
+  <text
+     x="740"
+     y="626"
+     fill="#475569"
+     font-size="8px"
+     id="text60">- Compromised host inventory (横向渗透 detection)</text>
+  <!-- Right column -->
+  <text
+     x="990"
+     y="564"
+     fill="#0f172a"
+     font-size="8px"
+     font-weight="600"
+     id="text61">VISUALIZATION &amp; DATA</text>
+  <text
+     x="990"
+     y="581"
+     fill="#475569"
+     font-size="8px"
+     id="text62">- Time trend analysis (hourly distribution)</text>
+  <text
+     x="990"
+     y="596"
+     fill="#475569"
+     font-size="8px"
+     id="text63">- IP reputation summary (VirusTotal + 微步)</text>
+  <text
+     x="990"
+     y="611"
+     fill="#475569"
+     font-size="8px"
+     id="text64">- Geo-location mapping (country / ASN)</text>
+  <text
+     x="990"
+     y="626"
+     fill="#475569"
+     font-size="8px"
+     id="text65">- Raw log data appendix (field_values.*)</text>
+  <text
+     x="740"
+     y="652"
+     fill="#0f172a"
+     font-size="8px"
+     font-weight="600"
+     id="text66">BLOCK RECOMMENDATIONS</text>
+  <text
+     x="740"
+     y="669"
+     fill="#475569"
+     font-size="8px"
+     id="text67">- High-confidence malicious IPs for firewall blocking | Risk scoring (1-10) per IP | Auto-generated iptables/ACL rules</text>
+  <!-- ================================================================ -->
+  <!-- CONNECTION ARROWS -->
+  <!-- ================================================================ -->
+  <!-- ES → MCP Tools -->
+  <line
+     x1="190"
+     y1="125"
+     x2="232"
+     y2="125"
+     stroke="#1e293b"
+     stroke-width="1.5"
+     marker-end="url(#arrow)"
+     id="line67" />
+  <text
+     x="211"
+     y="119"
+     fill="#475569"
+     font-size="7"
+     text-anchor="middle"
+     id="text68">SQL</text>
+  <!-- ES → Script Fallback -->
+  <path
+     d="M 190 155 L 210 155 L 210 241 L 232 241"
+     fill="none"
+     stroke="#94a3b8"
+     stroke-width="1"
+     stroke-dasharray="3,3"
+     marker-end="url(#arrow-dash)"
+     id="path68" />
+  <!-- Whitelist → Whitelist Filter -->
+  <line
+     x1="190"
+     y1="215"
+     x2="232"
+     y2="311"
+     stroke="#1e293b"
+     stroke-width="1.5"
+     marker-end="url(#arrow)"
+     id="line68" />
+  <!-- Threat Intel → Threat Lookup -->
+  <line
+     x1="190"
+     y1="300"
+     x2="232"
+     y2="381"
+     stroke="#1e293b"
+     stroke-width="1.5"
+     marker-end="url(#arrow)"
+     id="line69" />
+  <!-- Templates → Flow A -->
+  <path
+     d="M 190 375 L 208 375 L 208 175 L 732 175"
+     fill="none"
+     stroke="#94a3b8"
+     stroke-width="1"
+     stroke-dasharray="4,4"
+     id="path69" />
+  <!-- Templates → Flow B -->
+  <path
+     d="M 190 395 L 208 395 L 208 217 L 1032 217"
+     fill="none"
+     stroke="#94a3b8"
+     stroke-width="1"
+     stroke-dasharray="4,4"
+     id="path70" />
+  <!-- MCP/Script → Alert Aggregation -->
+  <line
+     x1="388"
+     y1="148"
+     x2="452"
+     y2="148"
+     stroke="#1e293b"
+     stroke-width="1.5"
+     marker-end="url(#arrow)"
+     id="line70" />
+  <!-- Whitelist Filter → Alert Aggregation -->
+  <path
+     d="M 388 311 L 422 311 L 422 148 L 452 148"
+     fill="none"
+     stroke="#94a3b8"
+     stroke-width="1"
+     stroke-dasharray="3,3"
+     id="path71" />
+  <!-- Alert Aggregation → Time Distribution -->
+  <line
+     x1="560"
+     y1="178"
+     x2="560"
+     y2="200"
+     stroke="#94a3b8"
+     stroke-width="1"
+     marker-end="url(#arrow-gray)"
+     id="line71" />
+  <!-- Threat Lookup → IP Enrichment Results -->
+  <path
+     d="M 388 381 L 422 381 L 422 297 L 452 297"
+     fill="none"
+     stroke="#1e293b"
+     stroke-width="1.5"
+     id="path72" />
+  <!-- Analysis → Flow A -->
+  <line
+     x1="668"
+     y1="148"
+     x2="732"
+     y2="145"
+     stroke="#1e293b"
+     stroke-width="1.5"
+     marker-end="url(#arrow)"
+     id="line72" />
+  <line
+     x1="668"
+     y1="225"
+     x2="732"
+     y2="217"
+     stroke="#94a3b8"
+     stroke-width="1"
+     stroke-opacity="0.6"
+     marker-end="url(#arrow-gray)"
+     id="line73" />
+  <!-- Analysis → Flow B -->
+  <path
+     d="M 668 297 L 698 297 L 698 145 L 1032 145"
+     fill="none"
+     stroke="#1e293b"
+     stroke-width="1.5"
+     marker-end="url(#arrow)"
+     id="path73" />
+  <!-- ================================================================ -->
+  <!-- Technical Notes -->
+  <!-- ================================================================ -->
+  <rect
+     x="20"
+     y="710"
+     width="390"
+     height="100"
+     rx="8"
+     fill="none"
+     stroke="#cbd5e1"
+     stroke-width="1"
+     id="rect73" />
+  <text
+     x="35"
+     y="730"
+     fill="#334155"
+     font-size="9px"
+     font-weight="600"
+     id="text73">Technical Details</text>
+  <text
+     x="35"
+     y="748"
+     fill="#64748b"
+     font-size="8px"
+     id="text74">ES Index: logfmt_746_YYYYMMDD (one index per day)</text>
+  <text
+     x="35"
+     y="763"
+     fill="#64748b"
+     font-size="8px"
+     id="text75">Fields: field_values.sip / field_values.dip / field_values.host_state</text>
+  <text
+     x="35"
+     y="778"
+     fill="#64748b"
+     font-size="8px"
+     id="text76">Timezone: Asia/Shanghai (UTC+8)</text>
+  <text
+     x="35"
+     y="793"
+     fill="#64748b"
+     font-size="8px"
+     id="text77">Filter: host_state IN ('攻击成功','失陷') AND sip_addr != '局域网'</text>
+  <!-- Component Mapping -->
+  <rect
+     x="430"
+     y="710"
+     width="250"
+     height="100"
+     rx="8"
+     fill="none"
+     stroke="#cbd5e1"
+     stroke-width="1"
+     id="rect77" />
+  <text
+     x="445"
+     y="730"
+     fill="#334155"
+     font-size="9px"
+     font-weight="600"
+     id="text78">Component Mapping</text>
+  <text
+     x="445"
+     y="748"
+     fill="#64748b"
+     font-size="8px"
+     id="text79">ids-patrol (port 3000) — ES query + analysis</text>
+  <text
+     x="445"
+     y="763"
+     fill="#64748b"
+     font-size="8px"
+     id="text80">ai-connector (port 3001) — multi-provider AI</text>
+  <text
+     x="445"
+     y="778"
+     fill="#64748b"
+     font-size="8px"
+     id="text81">secops-alert-analysis skill — Claude Code skill</text>
+  <text
+     x="445"
+     y="793"
+     fill="#64748b"
+     font-size="8px"
+     id="text82">Zero npm dependencies · Pure Node.js ESM</text>
+  <!-- Legend -->
+  <g
+     transform="translate(700,700)"
+     id="g92">
+    <rect
+       x="0"
+       y="0"
+       width="590"
+       height="110"
+       rx="8"
+       fill="none"
+       stroke="#cbd5e1"
+       stroke-width="1"
+       id="rect82" />
+    <text
+       x="15"
+       y="18"
+       fill="#334155"
+       font-size="9px"
+       font-weight="600"
+       id="text83">Legend</text>
+    <!-- Primary box -->
+    <rect
+       x="15"
+       y="28"
+       width="12"
+       height="12"
+       rx="2"
+       fill="none"
+       stroke="#1e293b"
+       stroke-width="1.5"
+       id="rect83" />
+    <text
+       x="33"
+       y="38"
+       fill="#475569"
+       font-size="7px"
+       id="text84">Primary Component</text>
+    <!-- Fallback box -->
+    <rect
+       x="130"
+       y="28"
+       width="12"
+       height="12"
+       rx="2"
+       fill="none"
+       stroke="#94a3b8"
+       stroke-width="1"
+       stroke-dasharray="3, 3"
+       id="rect84" />
+    <text
+       x="148"
+       y="38"
+       fill="#475569"
+       font-size="7px"
+       id="text85">Fallback / Optional</text>
+    <!-- Region boundary -->
+    <rect
+       x="245"
+       y="28"
+       width="12"
+       height="12"
+       rx="2"
+       fill="none"
+       stroke="#94a3b8"
+       stroke-width="1"
+       stroke-dasharray="4, 4"
+       id="rect85" />
+    <text
+       x="263"
+       y="38"
+       fill="#475569"
+       font-size="7px"
+       id="text86">Layer Boundary</text>
+    <!-- Notes box -->
+    <rect
+       x="350"
+       y="28"
+       width="12"
+       height="12"
+       rx="2"
+       fill="none"
+       stroke="#cbd5e1"
+       stroke-width="1"
+       id="rect86" />
+    <text
+       x="368"
+       y="38"
+       fill="#475569"
+       font-size="7px"
+       id="text87">Reference Info</text>
+    <!-- Arrow legend -->
+    <line
+       x1="15"
+       y1="62"
+       x2="45"
+       y2="62"
+       stroke="#1e293b"
+       stroke-width="1.5"
+       marker-end="url(#arrow)"
+       id="line87" />
+    <text
+       x="52"
+       y="65"
+       fill="#475569"
+       font-size="7px"
+       id="text88">Data flow (primary)</text>
+    <line
+       x1="180"
+       y1="62"
+       x2="210"
+       y2="62"
+       stroke="#94a3b8"
+       stroke-width="1"
+       stroke-dasharray="3, 3"
+       marker-end="url(#arrow-dash)"
+       id="line88" />
+    <text
+       x="217"
+       y="65"
+       fill="#475569"
+       font-size="7px"
+       id="text89">Data flow (fallback / optional)</text>
+    <line
+       x1="380"
+       y1="62"
+       x2="410"
+       y2="62"
+       stroke="#94a3b8"
+       stroke-width="1"
+       stroke-dasharray="4, 4"
+       id="line89" />
+    <text
+       x="417"
+       y="65"
+       fill="#475569"
+       font-size="7px"
+       id="text90">Template / config reference</text>
+    <text
+       x="15"
+       y="88"
+       fill="#94a3b8"
+       font-size="7px"
+       id="text91">Dashed region boundaries group components by architectural layer</text>
+    <text
+       x="15"
+       y="100"
+       fill="#94a3b8"
+       font-size="7px"
+       id="text92">MCP = primary query path; Script Pipeline = automatic fallback on MCP failure</text>
+  </g>
+</svg>

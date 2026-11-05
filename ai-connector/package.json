@@ -1,0 +1,24 @@
+{
+  "name": "ai-connector",
+  "version": "1.0.0",
+  "description": "Standalone AI connector with OpenAI-compatible API server and multi-provider support",
+  "type": "module",
+  "main": "src/api/server.js",
+  "scripts": {
+    "start": "node src/api/server.js",
+    "dev": "node --watch src/api/server.js"
+  },
+  "keywords": [
+    "ai",
+    "openai",
+    "api-server",
+    "llm"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "openai": "^4.0.0"
+  }
+}

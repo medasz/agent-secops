@@ -1,0 +1,20 @@
+{
+  "took": 5,
+  "timed_out": false,
+  "_shards": { "total": 1, "successful": 1, "skipped": 0, "failed": 0 },
+  "hits": { "total": { "value": 1, "relation": "eq" }, "max_score": null, "hits": [] },
+  "aggregations": {
+    "by_ioc": {
+      "doc_count_error_upper_bound": 0,
+      "sum_other_doc_count": 0,
+      "buckets": [
+        {
+          "key": "19.mlcro.net",
+          "doc_count": 137,
+          "max_timestamp": { "value": 1783612650757, "value_as_string": "2026-07-09T15:57:30.757Z" },
+          "by_attack_type": { "doc_count_error_upper_bound": 0, "sum_other_doc_count": 0, "buckets": [{ "key": "远控木马", "doc_count": 137 }] }
+        }
+      ]
+    }
+  }
+}

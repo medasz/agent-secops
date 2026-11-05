@@ -1,0 +1,22 @@
+{
+  "query_info": {
+    "index": "logfmt_746_20260709",
+    "dns_servers": ["192.0.2.10", "192.0.2.11", "192.0.2.12"],
+    "total_iocs": 10,
+    "total_alerts": 1349,
+    "sum_other_doc_count": 0,
+    "query_time_ms": 38
+  },
+  "domains": [
+    {"ioc": "24813-发现内网穿透工具Tailscale通信流量", "total_alerts": 269, "attack_types": [{"type": "代理工具", "count": 269}], "max_timestamp": "2026-07-09T15:31:28.561Z"},
+    {"ioc": "*mlcrosoft.vip", "total_alerts": 216, "attack_types": [{"type": "远控木马", "count": 216}], "max_timestamp": "2026-07-09T15:13:47.434Z"},
+    {"ioc": "19.mlcro.net", "total_alerts": 137, "attack_types": [{"type": "远控木马", "count": 137}], "max_timestamp": "2026-07-09T15:57:30.757Z"},
+    {"ioc": "23057-发现使用远程连接工具向日葵", "total_alerts": 129, "attack_types": [{"type": "代理工具", "count": 129}], "max_timestamp": "2026-07-09T15:50:52.708Z"},
+    {"ioc": "24030-发现远程连接工具ToDesk通信流量", "total_alerts": 93, "attack_types": [{"type": "代理工具", "count": 93}], "max_timestamp": "2026-07-09T15:59:31.771Z"},
+    {"ioc": "xred.mooo.com", "total_alerts": 70, "attack_types": [{"type": "感染型病毒", "count": 70}], "max_timestamp": "2026-07-09T12:27:41.093Z"},
+    {"ioc": "3qq.qcommerceshop.com", "total_alerts": 67, "attack_types": [{"type": "远控木马", "count": 67}], "max_timestamp": "2026-07-09T13:55:34.786Z"},
+    {"ioc": "enyepeieo.cn", "total_alerts": 66, "attack_types": [{"type": "远控木马", "count": 66}], "max_timestamp": "2026-07-09T11:59:48.878Z"},
+    {"ioc": "johnhop77.ddns.net", "total_alerts": 48, "attack_types": [{"type": "远控木马", "count": 48}], "max_timestamp": "2026-07-09T15:47:07.682Z"},
+    {"ioc": "msg.whxic.cn", "total_alerts": 2, "attack_types": [{"type": "僵尸网络", "count": 2}], "max_timestamp": "2026-07-09T11:19:41.551Z"}
+  ]
+}

@@ -1,0 +1,1 @@
+[{"type":"text","text":"[{\"_index\":\"logfmt_746_20260505\",\"_source\":{\"field_values\":{\"sip\":\"222.90.96.237\",\"dip\":\"192.0.2.60\",\"sip_addr\":\"222.90.96.237\",\"host_state\":\"攻击成功\",\"attack_type\":\"SQL注入\",\"hazard_rating\":\"高危\",\"access_time\":\"2026-05-05T14:32:01+08:00\"}}}]"}]

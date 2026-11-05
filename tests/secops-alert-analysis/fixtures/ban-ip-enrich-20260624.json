@@ -1,0 +1,19 @@
+{
+  "query_info": {
+    "index": "logfmt_746_20260624",
+    "total_external_ips": 8,
+    "total_alerts": 245,
+    "sum_other_doc_count": 0,
+    "query_time_ms": 42
+  },
+  "ips": [
+    {"ip": "172.21.67.102", "total_alerts": 5158, "attack_types": [{"type":"代码执行","count":1269},{"type":"命令执行","count":1002}], "hazard_rating": "危急", "max_timestamp": "2026-06-24T06:09:51.443Z", "sip_addr": "局域网"},
+    {"ip": "5.61.209.92", "total_alerts": 220, "attack_types": [{"type":"代码执行","count":220}], "hazard_rating": "危急", "max_timestamp": "2026-06-23T19:25:26.952Z", "sip_addr": "西班牙--瓦伦西亚自治区--阿利坎特(38.340864/-0.477190)"},
+    {"ip": "198.51.100.1", "total_alerts": 137, "attack_types": [{"type":"代理工具","count":136},{"type":"流氓推广","count":1}], "hazard_rating": "高", "max_timestamp": "2026-06-23T16:20:44.627Z", "sip_addr": "美国(39.765054/-101.407912)"},
+    {"ip": "192.34.108.210", "total_alerts": 30, "attack_types": [{"type":"暴力猜解","count":30}], "hazard_rating": "中", "max_timestamp": "2026-06-24T02:20:54.295Z", "sip_addr": "美国--华盛顿州--西雅图(47.603780/-122.329700)"},
+    {"ip": "172.110.223.197", "total_alerts": 14, "attack_types": [{"type":"其他","count":14}], "hazard_rating": "低", "max_timestamp": "2026-06-24T09:49:30.495Z", "sip_addr": "未知(54.525961/-105.255119)"},
+    {"ip": "5.187.35.142", "total_alerts": 14, "attack_types": [{"type":"目录遍历","count":14}], "hazard_rating": "中", "max_timestamp": "2026-06-23T16:41:07.771Z", "sip_addr": "西班牙--瓦伦西亚自治区--圣波拉(38.186152/-0.568873)"},
+    {"ip": "1.14.142.185", "total_alerts": 12, "attack_types": [{"type":"信息泄露","count":8},{"type":"黑市工具","count":4}], "hazard_rating": "中", "max_timestamp": "2026-06-24T10:13:02.739Z", "sip_addr": "中国--广东省--广州市(23.116548/113.295827)"},
+    {"ip": "9.9.9.9", "total_alerts": 5, "attack_types": [{"type":"信息泄露","count":5}], "hazard_rating": "低", "max_timestamp": "2026-06-24T10:00:00.000Z", "sip_addr": "美国(1.0/2.0)"}
+  ]
+}
